@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 class CourseController extends Controller
 {
     public function index(){
-        $courses = Course::all();
+        $courses = Course::paginate(5);
         return view("index", [
             "courses"=>$courses
         ]);
