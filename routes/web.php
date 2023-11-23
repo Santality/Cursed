@@ -31,3 +31,5 @@ Route::post("/login-valid", [UserController::class, 'login_valid']);
 Route::post("/register-valid", [UserController::class, 'register_valid']);
 
 Route::get("/logout", [UserController::class, 'signout']);
+
+Route::get("/category/{id_genre}", [CategoryController::class, 'list_category']);

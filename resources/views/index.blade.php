@@ -25,6 +25,9 @@
                 <a class="nav-link" href="#courses">Курсы</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="#category">Категории</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="#enroll">Записаться</a>
               </li>
               @guest
@@ -113,6 +116,20 @@
               {{ $courses->withQueryString()->links('pagination::bootstrap-5') }}
             </div>
         </section>
+        <section id="category">
+          <div class="container">
+            <h2 class="m-3">Категории</h2>
+            <div class="d-flex">
+              @foreach ($category as $item2)
+                <div class="cstm-card">
+                  <p>{{$item2->title}}</p>
+                  <a href="/category/{{$item2->id}}" class="btn btn-primary">Список</a>
+                </div>
+              @endforeach
+            </div>
+            {{ $category->withQueryString()->links('pagination::bootstrap-5') }}
+          </div>
+      </section>
         <section id="enroll">
             <div class="container">
               <h2 class="m-3">Записаться</h2>

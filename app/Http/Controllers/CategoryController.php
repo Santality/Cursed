@@ -15,4 +15,9 @@ class CategoryController extends Controller
         ]);
         return redirect("/admin");
     }
+
+    public function list_category($id_genre){
+        $categories = Category::find($id_genre);
+        return view('category',['games'=>$categories]);
+    }
 }

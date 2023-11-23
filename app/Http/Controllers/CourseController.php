@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Course;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -10,8 +11,10 @@ class CourseController extends Controller
 {
     public function index(){
         $courses = Course::paginate(5);
+        $category = Category::paginate(8);
         return view("index", [
-            "courses"=>$courses
+            "courses"=>$courses,
+            "category"=>$category
         ]);
     }
 
